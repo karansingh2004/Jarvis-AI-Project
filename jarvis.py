@@ -11,9 +11,6 @@ import datetime
 import smtplib
 from pytube import YouTube
 import urllib.request
-# import instabot
-# import instapy
-# from instapy import Bot
 
 
 # Function to send mail but first u have to allow it to send mail by less secure methods
@@ -21,8 +18,8 @@ def sendMail(to, content):
     server = smtplib.SMTP('smtp.gmail.com' , 587)
     server.ehlo()
     server.starttls()
-    server.login('karan1312004@gmail.com' , 'WearetheFLASH@barry')
-    server.sendmail('karan1312004@gmail.com' , to, content)
+    server.login('enter-mail-here' , 'enter-password-here')
+    server.sendmail('enter-reciver-mail' , to, content)
     server.close()
     
 
@@ -71,13 +68,7 @@ if __name__ == '__main__':
             print(wiki_sum)
             speak(wiki_sum)
         
-        # elif 'youtube' in query:
-        #     webbrowser.open("https://www.youtube.com")
         
-        # elif 'google' in query:
-        #     webbrowser.open("https://www.google.com")
-            
-
         #Function to play Music but remember to give it proper path    
         elif 'music' in query:
             music_dir='/home/barryallen/Desktop/ubuntudesktop/jarvis_ke_gane' 
@@ -109,7 +100,7 @@ if __name__ == '__main__':
             try:
                 speak("What Should I say ?")
                 content=takeCommand()
-                to="karan1312004@gmail.com"
+                to="reciver-mail-id"
                 sendMail(to, content)
                 speak("Mail is sent")
                 
@@ -133,12 +124,12 @@ if __name__ == '__main__':
             # print(html.read().decode())
 
 
-            # <><><> YouTube Video Downloader <><><>
+#              <><><> YouTube Video Downloader <><><>
             #Put link of any youtube video here and also can adjust the resolution. It will download it
-            #link = 
-            # video=YouTube(link)
-            # stream=video.streams.get_highest_resolution()
-            # stream.download()
+            link = #enter any youtube video link here
+            video=YouTube(link)
+            stream=video.streams.get_highest_resolution()
+            stream.download()
 
 
         # Search something on google
@@ -149,9 +140,3 @@ if __name__ == '__main__':
 
             url=f"https://www.google.com/search?q="+url_str  # Adding ur word with google url
             webbrowser.open(url)                            # Opening thar url
-
-        # elif 'insta' or 'instagram' in query:
-        #     bot = Bot(username='barry20022022' , password='barry1312004')
-        #     bot.login()
-        #     # bot.upload_photo('webDesignLogo.jpg',caption='Logo For Web Designing...')
-        #     bot.upload('webDesignLogo','This is my logo')
