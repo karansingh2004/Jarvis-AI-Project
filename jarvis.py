@@ -140,3 +140,5 @@ if __name__ == '__main__':
 
             url=f"https://www.google.com/search?q="+url_str  # Adding ur word with google url
             webbrowser.open(url)                            # Opening thar url
+            
+# Coded By - Karan Singh
